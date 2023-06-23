@@ -3,11 +3,12 @@ import './App.css'
 
 function App() {
 
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-
-    async function registerUser(){
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+ 
+    async function registerUser(event){
+        event.preventDefault();
         const response = await fetch("http://localhost:1337/api/register", {
             method: "POST", 
             headers: {
@@ -38,7 +39,7 @@ function App() {
                 <input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    type="text"
+                    type="email"
                     placeholder='email'
                 />
                 <br></br>
