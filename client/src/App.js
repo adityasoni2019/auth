@@ -1,4 +1,4 @@
-import { useState, useSyncExternalStore } from 'react'
+import { useState } from 'react'
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     const [password, setPassword] = useState('');
  
     async function registerUser(event){
-        event.preventDefault();
+        event.preventDefault(); // not sure what this is for. 
         const response = await fetch("http://localhost:1337/api/register", {
             method: "POST", 
             headers: {
@@ -19,9 +19,11 @@ function App() {
                 email, 
                 password,
             }),
+            // this will basically convert something like this -> {name: "aditya"} to this -> {"name": "aditya"}
         }) 
 
         const data = await response.json(); 
+        // I THINK, the data here is just the status, i.e., 
         console.log(data);
     }
 

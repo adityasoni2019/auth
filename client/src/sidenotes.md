@@ -1,0 +1,3 @@
+res.json() and res.send() are both commonly used in server-side frameworks to send responses back to clients. The main difference between the two methods lies in the format of the response they send.
+`res.json()` is specifically designed to send JSON (JavaScript Object Notation) responses.
+`res.send()` is a more general-purpose method that can send responses in various formats, such as plain text, HTML, JSON, or even binary data.
